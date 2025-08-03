@@ -1,0 +1,41 @@
+.AuthWrapper {
+  margin: 0 auto;
+  max-width: 534px;
+  width: 100%;
+  border-radius: 30px;
+  border: 1px solid #535353;
+  background: radial-gradient(circle, rgba(50, 52, 53, 0.486) 0%, rgba(0, 0, 0, 0.651) 100%);
+  padding: 53px 56px;
+
+  .text {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--gray);
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    margin-top: 40px;
+  }
+
+  .button {
+    border-radius: 15px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--gray);
+    background: radial-gradient(circle, rgba(50, 52, 53, 0.486) 0%, rgba(0, 0, 0, 0.651) 100%);
+    border: 1px solid #535353;
+    cursor: pointer;
+    transition: 0.3s all;
+
+    &:hover {
+      filter: contrast(1.5);
+    }
+  }
+}

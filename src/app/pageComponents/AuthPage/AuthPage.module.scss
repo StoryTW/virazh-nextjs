@@ -1,0 +1,26 @@
+.AuthPage {
+  background-image: url('/assets/img/fon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+
+  .header {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+
+    button {
+      cursor: pointer;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 24px;
+
+      &.active {
+        color: var(--blue);
+      }
+    }
+  }
+}

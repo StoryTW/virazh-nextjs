@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Providers } from '@/providers/Providers';
+import '@/assets/styles/index.scss';
 
 export const metadata: Metadata = {
   title: 'Игромир',

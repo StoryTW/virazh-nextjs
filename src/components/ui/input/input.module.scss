@@ -1,0 +1,46 @@
+.root {
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+
+  input {
+    padding: 14px 24px;
+    font-size: 20px;
+    border: 1px solid #535353;
+    background: radial-gradient(circle, rgba(50, 52, 53, 0.486) 0%, rgba(0, 0, 0, 0.651) 100%);
+    border-radius: 15px;
+    width: 100%;
+    color: var(--white);
+    @include transition;
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &:focus {
+      border: 1px solid var(--blue);
+    }
+
+    &:active {
+      border: 1px solid var(--blue);
+    }
+
+    &:read-only {
+      color: var(--gray);
+      border: 1px solid var(--blue);
+    }
+
+    &::placeholder {
+      color: var(--gray);
+    }
+
+    &.error {
+      border: 1px solid var(--red);
+    }
+  }
+}
