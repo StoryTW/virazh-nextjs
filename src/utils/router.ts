@@ -1,9 +1,9 @@
 export const ROUTER = {
   MAIN: '/',
-  AUTH: '/auth',
-  REVIEWS: '/reviews',
-  WHEEL: '/wheel',
-  FAQ: '/faq',
-  // NEW: '/new',
-  CONTACS: '/contacts',
+  // AUTH: '/auth',
+  CART: '/profile/cart',
+  // REVIEWS: '/reviews',
+  // FAQ: '/faq',
+  // CONTACS: '/contacts',
+  PROFILE: '/profile',
 } as const;
