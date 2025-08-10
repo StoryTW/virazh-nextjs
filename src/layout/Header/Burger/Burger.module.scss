@@ -1,0 +1,52 @@
+.btn {
+  position: relative;
+  cursor: pointer;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus {
+    border: 1px solid var(--white);
+  }
+}
+
+.line {
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 10px;
+  @include transition;
+
+  &.top {
+    top: 17px;
+  }
+
+  &.middle {
+    top: 24px;
+  }
+
+  &.bottom {
+    bottom: 17px;
+  }
+
+  &.active {
+    &.top {
+      top: 24px;
+      transform: rotate(-45deg);
+    }
+
+    &.middle {
+      opacity: 0;
+    }
+
+    &.bottom {
+      bottom: 24px;
+      transform: rotate(45deg);
+    }
+  }
+}

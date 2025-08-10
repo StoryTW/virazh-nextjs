@@ -1,0 +1,35 @@
+.root {
+  position: relative;
+  width: 393px;
+}
+
+.input {
+  border-radius: 20px;
+  padding: 16px 90px;
+  font-size: 16px;
+  background: var(--white);
+  color: var(--black);
+  border: none;
+  width: 100%;
+
+  &:focus {
+    background: var(--white);
+  }
+
+  &:active {
+    background: var(--white);
+  }
+
+  &::placeholder {
+    color: var(--gray4);
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  left: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

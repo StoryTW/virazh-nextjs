@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 16px;
+  width: 212px;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: var(--gray);
+  border-radius: 50%;
+
+  svg {
+    color: var(--black);
+    @include transition;
+  }
+
+
+  &:hover {
+    svg {
+      color: var(--white);
+    }
+  }
+}

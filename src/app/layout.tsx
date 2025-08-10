@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { Providers } from '@/providers/Providers';
 import '@/assets/styles/index.scss';
+import { Header } from '@/layout/Header/Header';
+import { Footer } from '@/layout/Footer/Footer';
 
 export const metadata: Metadata = {
-  title: 'Игромир',
-  description: 'Игромир',
+  title: 'Virazh Solution',
+  description: 'Virazh Solution',
   // icons: {
   //   icon: Favicon.src,
   //   apple: Favicon.src,
@@ -37,7 +39,11 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
