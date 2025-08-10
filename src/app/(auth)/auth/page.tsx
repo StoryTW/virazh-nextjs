@@ -1,4 +1,4 @@
-import AuthPage from '@/app/pageComponents/AuthPage/AuthPage';
+import AuthPage from '@/pageComponents/AuthPage/AuthPage';
 import React from 'react';
 
 const Auth = () => {
