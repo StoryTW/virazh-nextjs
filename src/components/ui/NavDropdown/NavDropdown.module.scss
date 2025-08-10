@@ -1,0 +1,56 @@
+.root {
+  width: 100%;
+}
+
+.trigger {
+  cursor: pointer;
+  border: 1px solid #323435;
+  border-radius: 16px;
+  background: var(--bg_gradient);
+  width: 100%;
+  position: relative;
+  z-index: 2;
+
+  &:focus {
+    border: 1px solid #323435;
+    background: var(--bg_gradient);
+  }
+}
+
+.triggerWrapper {
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--blue);
+  text-align: start;
+}
+
+.content {
+  border: 1px solid #323435;
+  border-radius: 16px;
+  background: var(--bg_gradient);
+}
+
+.contentWrapper {
+  padding: 36px;
+}
+
+.item {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--gray);
+  @include transition;
+
+  &:hover {
+    color: var(--white);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+
+.link {
+  width: 100%;
+}

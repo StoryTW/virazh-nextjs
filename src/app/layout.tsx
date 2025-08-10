@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import { Providers } from '@/providers/Providers';
 import '@/assets/styles/index.scss';
 import { Header } from '@/layout/Header/Header';
+import { Footer } from '@/layout/Footer/Footer';
 
 export const metadata: Metadata = {
   title: 'Virazh Solution',
@@ -41,6 +42,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -71,6 +71,20 @@ const animateObject = {
       height: 'auto',
     },
   },
+
+  navDropdown: {
+    hide: {
+      y: -10,
+      opacity: 0,
+      height: 0,
+      overflow: 'hidden'
+    },
+    show: {
+      y: -10,
+      opacity: 1,
+      height: 'auto',
+    },
+  },
 };
 
 export const animateHelper = (variant: IAnimateVariants) => animateObject[variant];

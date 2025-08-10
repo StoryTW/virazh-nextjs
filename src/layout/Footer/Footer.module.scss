@@ -1,0 +1,50 @@
+.root {
+  background: url('/assets/img/bg_telegram_black.svg'), var(--bg_gradient_footer);
+  border-radius: 40px 40px 0px 0px;
+  background-repeat: no-repeat;
+  background-size: 40%, 100%;
+  background-position: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  color: var(--gray);
+  margin-bottom: 48px;
+}
+
+.text2 {
+  margin-bottom: 32px;
+
+  span {
+    font-weight: 800;
+    font-size: 24px;
+    color: var(--blue);
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--white);
+  }
+}
+
+.text3 {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.marginBottom {
+  margin-bottom: 100px;
+}
