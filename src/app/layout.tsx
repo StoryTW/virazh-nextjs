@@ -4,6 +4,10 @@ import { Providers } from '@/providers/Providers';
 import '@/assets/styles/index.scss';
 import { Header } from '@/layout/Header/Header';
 import { Footer } from '@/layout/Footer/Footer';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 export const metadata: Metadata = {
   title: 'Virazh Solution',
