@@ -1,0 +1,44 @@
+.root {
+  background: radial-gradient(96.36% 132.53% at 20.09% -15.1%, #323435 0%, #000 100%);
+  border: 1px solid #535353;
+  border-radius: 16px;
+  min-height: 636px;
+  height: 100%;
+  position: relative;
+  margin-left: 30px;
+}
+
+.wrapper {
+  padding: 36px;
+}
+
+.image {
+  position: absolute;
+  left: -30px;
+  top: 24px;
+  z-index: 2;
+}
+
+.info {
+  padding-left: 32px;
+  margin-bottom: 32px;
+}
+
+.name {
+  font-weight: 800;
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.date {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--white);
+}
+
+.comment {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--gray);
+}

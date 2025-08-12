@@ -7,6 +7,7 @@ import { useHasHydrated } from '@/hooks/useHasHydrated';
 import { NavDropdown } from '@/components/ui/NavDropdown/NavDropdown';
 import { ROUTER } from '@/utils/router';
 import { NavTriggerItem } from './NavTriggerItem/NavTriggerItem';
+import { RemoveScroll } from 'react-remove-scroll';
 
 interface INavbar {
   openMenu: boolean;
@@ -61,7 +62,7 @@ export const Navbar: FC<INavbar> = ({ onClose, openMenu }) => {
   return createPortal(
     <AnimatePresence mode='wait'>
       {openMenu && hasHydrated && (
-        <>
+        <RemoveScroll>
           <motion.div
             className={styles.overlay}
             variants={animateHelper('navbarOverlay')}
@@ -95,7 +96,7 @@ export const Navbar: FC<INavbar> = ({ onClose, openMenu }) => {
               </div>
             </div>
           </motion.div>
-        </>
+        </RemoveScroll>
       )}
     </AnimatePresence>,
     document.body,

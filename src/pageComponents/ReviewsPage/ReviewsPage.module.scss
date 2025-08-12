@@ -1,0 +1,27 @@
+.root {
+  background: url('/assets/img/fon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section {
+  max-width: 1470px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 0px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  color: var(--white);
+  line-height: 80%;
+}
+
+.content {
+  border-radius: 30px;
+  border: 2px solid var(--blue);
+  padding: 104px 80px 104px 50px;
+  margin-bottom: 48px;
+}

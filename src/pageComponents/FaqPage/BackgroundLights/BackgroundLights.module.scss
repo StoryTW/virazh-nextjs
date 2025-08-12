@@ -1,0 +1,34 @@
+.sphere {
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  position: absolute;
+  mix-blend-mode: screen;
+  animation: hueShift 18s linear infinite;
+}
+
+.sphere_one {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  background: radial-gradient(circle at 30% 30%, #9b06ff, #0697ff 60%, #e60606 100%);
+}
+
+.sphere_two {
+  position: absolute;
+  top: 40%;
+  right: 20%;
+  background: radial-gradient(circle at 70% 70%, #a0ff06, #067aff 60%, #06fff3 100%);
+}
+
+@keyframes hueShift {
+  0% {
+    filter: blur(300px) hue-rotate(0deg);
+  }
+  50% {
+    filter: blur(300px) hue-rotate(120deg);
+  }
+  100% {
+    filter: blur(300px) hue-rotate(360deg);
+  }
+}

@@ -77,13 +77,22 @@ const animateObject = {
       y: -10,
       opacity: 0,
       height: 0,
-      overflow: 'hidden'
+      overflow: 'hidden',
     },
     show: {
       y: -10,
       opacity: 1,
       height: 'auto',
     },
+  },
+
+  faqDropdown: {
+    hide: {
+      height: 0,
+      overflow: 'hidden',
+      opacity: 0,
+    },
+    show: { height: 'auto', opacity: 1 },
   },
 };
 

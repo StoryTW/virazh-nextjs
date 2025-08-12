@@ -1,0 +1,31 @@
+.root {
+  position: relative;
+  background: url('/assets/img/bg_plane.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.section {
+  max-width: 1470px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 0px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  color: var(--white);
+  line-height: 80%;
+}
+
+.content {
+  border-radius: 30px;
+  border: 2px solid var(--blue);
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
