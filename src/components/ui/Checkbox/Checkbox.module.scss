@@ -12,18 +12,27 @@
   gap: 16px;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  min-width: 20px;
-  height: 20px;
-  min-height: 20px;
-  background-color: transparent;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+  background-color: var(--black);
   border-radius: 8px;
+
+  &:focus {
+    background-color: var(--black);
+  }
 }
 
 .icon {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  svg {
+    width: 34px;
+    height: 34px;
+  }
 }
 
 .label {
