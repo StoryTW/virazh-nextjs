@@ -1,0 +1,44 @@
+.wrapper {
+  cursor: pointer;
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.root {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  min-height: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.text {
+  cursor: pointer;
+  width: 100%;
+  // @include Regular_18;
+  color: var(--white);
+
+  &.error {
+    color: var(--red);
+  }
+}
