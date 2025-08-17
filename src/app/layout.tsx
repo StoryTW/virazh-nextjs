@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Onest } from 'next/font/google';
 import { Providers } from '@/providers/Providers';
 import '@/assets/styles/index.scss';
 import { Header } from '@/layout/Header/Header';
@@ -25,13 +25,8 @@ export const viewport: Viewport = {
   userScalable: true,
 };
 
-const geistSans = Geist({
+const onestSans = Onest({
   variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
 });
 
@@ -42,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={onestSans.variable}>
         <Providers>
           <Header />
           {children}

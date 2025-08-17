@@ -1,0 +1,21 @@
+.ourServices {
+  max-width: 1627px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  padding-top: 72px;
+
+  .title {
+    font-size: 75px;
+    color: var(--gray);
+    position: absolute;
+    top: -40px;
+    left: 0;
+  }
+
+  .categories {
+    margin-top: 133px;
+    max-width: 1273px;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,24 @@
+.h1 {
+  font-size: 53px;
+  font-weight: 600;
+  max-width: 1607px;
+}
+
+.footer {
+  margin-top: 80px;
+}
+
+.startSectionPages {
+  background-image: url('/assets/img/text.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 162px 20px;
+  position: relative;
+  overflow: hidden;
+
+  .inner {
+    max-width: 1587px;
+    margin: 0 auto;
+  }
+}
