@@ -1,61 +1,112 @@
 'use client';
 import React, { useState } from 'react';
-import styles from './CreateProductForm.module.scss';
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 import { EntryStep } from './EntryStep/EntryStep';
-import { Step1 } from './Step1/Step1';
-import { Step2 } from './Step2/Step2';
-import { Step3 } from './Step3/Step3';
-import { Step4 } from './Step4/Step4';
-import { Step5 } from './Step5/Step5';
-import { Step6 } from './Step6/Step6';
-import { Step7 } from './Step7/Step7';
-import { Step8 } from './Step8/Step8';
-import { Step9 } from './Step9/Step9';
-import { Step10 } from './Step10/Step10';
-import { FinalStep } from './FinalStep/FinalStep';
+import { FullStep1 } from './Full/FullStep1/FullStep1';
+import { StepsWrapper } from './StepsWrapper/StepsWrapper';
+import { FullStep2 } from './Full/FullStep2/FullStep2';
+import { FullStep3 } from './Full/FullStep3/FullStep3';
+import { FullStep4 } from './Full/FullStep4/FullStep4';
+import { FullStep5 } from './Full/FullStep5/FullStep5';
+import { FullStep6 } from './Full/FullStep6/FullStep6';
+import { FullStep7 } from './Full/FullStep7/FullStep7';
+import { FullStep8 } from './Full/FullStep8/FullStep8';
+import { FullStep9 } from './Full/FullStep9/FullStep9';
+import { DesignStep1 } from './Design/DesignStep1/DesignStep1';
+import { DesignStep2 } from './Design/DesignStep2/DesignStep2';
+import { DesignStep3 } from './Design/DesignStep3/DesignStep3';
+import { DesignStep4 } from './Design/DesignStep4/DesignStep4';
+import { DesignStep5 } from './Design/DesignStep5/DesignStep5';
 
 export interface IForm {
-  full_website: boolean;
-  only_design: boolean;
-  only_verstka: boolean;
+  entry_step: 'full' | 'design' | 'verstka';
+
+  //full
+  step1_full?: 'resume' | 'promo' | 'corporate' | 'e-commerce' | 'info' | 'portal' | 'catalog';
+  step2_full?: string;
+  step3_full?: 'horizontal' | 'vertical' | 'combo' | 'designer' | 'custom';
+  step4_full?: 'no_menu' | 'usual' | 'dropdown' | 'designer' | 'custom';
+  step5_full?: 'beatiful_design' | 'information' | 'minimalism' | 'designer' | 'custom';
+  step6_full?: 'block' | 'random' | 'structure' | 'designer' | 'custom';
+  step7_full?: 'delovoi' | 'glamur' | 'rich' | 'info' | 'style' | 'carton' | 'designer';
+  step8_full?: 'firm' | 'designer';
+  step9_full?: 'center' | 'wide' | 'designer' | 'adaptiv';
+
+  //design
+  step1_design?: 'logo' | 'colors' | 'other';
+  step2_design?: 'graphic' | 'info' | 'other';
+  step3_design?: ('corporate' | 'strict' | 'aggresion' | 'young' | 'avangard' | 'soft' | 'warm')[];
+  step4_design?: string;
+  step5_design?: 'cold' | 'warm' | 'other';
+  step6_design?: 'smooth' | 'sharped' | 'rectangular' | 'other';
+  step7_design?: 'resume' | 'corporate' | 'info' | 'e-commerce' | 'other';
+  step8_design?: string;
+  step9_design?: 'yes' | 'no';
+
+  //verstka
+  step1_verstka?: string;
+  step2_verstka?: 'yes' | 'no';
+  step3_verstka?: ('sliders' | 'modals' | 'dropdowns')[];
+  step4_verstka?: string;
+  step5_verstka?: ('pr' | 'vistavka' | 'otchet')[];
+  step6_verstka?: string;
+  step7_verstka?: boolean;
 }
+
+export const STEPS_DATA = {
+  full: [
+    <FullStep1 />,
+    <FullStep2 />,
+    <FullStep3 />,
+    <FullStep4 />,
+    <FullStep5 />,
+    <FullStep6 />,
+    <FullStep7 />,
+    <FullStep8 />,
+    <FullStep9 />,
+  ],
+  design: [<DesignStep1 />, <DesignStep2 />, <DesignStep3 />, <DesignStep4 />, <DesignStep5 />],
+  verstka: [<FullStep1 />, <FullStep2 />],
+};
 
 export const CreateProductForm = () => {
   const methods = useForm<IForm>({
     mode: 'onChange',
     defaultValues: {
-      //Entry Step
-      full_website: true, //Разработать сайт под ключ
-      only_design: false, //Разработать макет сайта (дизайн)
-      only_verstka: false, //Верстка готового макета
+      entry_step: 'full',
     },
   });
 
-  const [step, setStep] = useState(0);
-
-  const steps = [
-    <EntryStep />,
-    <Step1 />,
-    <Step2 />,
-    <Step3 />,
-    <Step4 />,
-    <Step5 />,
-    <Step6 />,
-    <Step7 />,
-    <Step8 />,
-    <Step9 />,
-    <Step10 />,
-    <FinalStep />,
-  ];
+  const [step, setStep] = useState<number>(0);
+  const [isEntryStepCompleted, setIsEntryStepCompleted] = useState<boolean>(false);
 
   const nextStep = async () => {
-    const isValid = await methods.trigger();
+    if (step === 0) {
+      const isValid = await methods.trigger('entry_step');
 
-    if (isValid) setStep((s) => s + 1);
+      if (isValid) {
+        setIsEntryStepCompleted(true);
+        setStep(1);
+      }
+    } else {
+      const isValid = await methods.trigger();
+
+      if (isValid) {
+        setStep((s) => s + 1);
+      }
+    }
   };
 
-  const prevStep = () => setStep((s) => s - 1);
+  const prevStep = () => {
+    if (step === 1) {
+      setIsEntryStepCompleted(false);
+      setStep(0);
+    } else {
+      setStep((s) => s - 1);
+    }
+  };
+
+  const entryStep = methods.watch('entry_step');
 
   const onSubmit: SubmitHandler<IForm> = (data) => {
     console.log('Все данные формы:', data);
@@ -64,21 +115,13 @@ export const CreateProductForm = () => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>
-        {steps[step]}
+        <StepsWrapper nextStep={nextStep} prevStep={prevStep} step={step}>
+          <>
+            {!isEntryStepCompleted && <EntryStep />}
 
-        <div style={{ marginTop: 20 }}>
-          {step > 0 && (
-            <button type='button' onClick={prevStep} style={{color: '#fff'}}>
-              Назад
-            </button>
-          )}
-          {step < steps.length - 1 && (
-            <button type='button' onClick={nextStep} style={{color: '#fff'}}> 
-              Далее
-            </button>
-          )}
-          {step === steps.length - 1 && <button type='submit'>Отправить</button>}
-        </div>
+            {isEntryStepCompleted && <>{STEPS_DATA[entryStep][step - 1]}</>}
+          </>
+        </StepsWrapper>
       </form>
     </FormProvider>
   );

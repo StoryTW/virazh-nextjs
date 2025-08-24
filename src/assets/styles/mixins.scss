@@ -137,3 +137,15 @@
     display: none;
   }
 }
+
+@mixin onest_400_20 {
+  font-family: var(--font-onest);
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@mixin onest_600_20 {
+  font-family: var(--font-onest);
+  font-weight: 400;
+  font-size: 20px;
+}

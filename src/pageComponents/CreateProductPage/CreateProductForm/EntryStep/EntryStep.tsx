@@ -1,50 +1,38 @@
 import React from 'react';
 import styles from './EntryStep.module.scss';
 import { Controller, useFormContext } from 'react-hook-form';
-import { Checkbox } from '@/components/ui/Checkbox/Checkbox';
 import { IForm } from '../CreateProductForm';
+import { RadioGroup } from '@/components/ui/RadioGroup/RadioGroup';
+
+const items = [
+  {
+    name: 'Разработать сайт под ключ',
+    value: 'full',
+  },
+  {
+    name: 'Разработать макет сайта (дизайн)',
+    value: 'design',
+  },
+  {
+    name: 'Верстка готового макета',
+    value: 'verstka',
+  },
+];
 
 export const EntryStep = () => {
-  const {
-    control,
-    formState: { errors },
-    watch,
-  } = useFormContext<IForm>();
+  const { control } = useFormContext<IForm>();
 
   return (
     <div className={styles.root}>
       <Controller
-        name='full_website'
+        name='entry_step'
         control={control}
         render={({ field }) => (
-          <Checkbox
-            label='Разработать сайт под ключ'
-            checked={!!field.value}
-            onCheckedChange={field.onChange}
-          />
-        )}
-      />
-
-      <Controller
-        name='only_design'
-        control={control}
-        render={({ field }) => (
-          <Checkbox
-            label='Разработать макет сайта (дизайн)'
-            checked={!!field.value}
-            onCheckedChange={field.onChange}
-          />
-        )}
-      />
-
-      <Controller
-        name='only_verstka'
-        control={control}
-        render={({ field }) => (
-          <Checkbox
-            label='Верстка готового макета'
-            checked={!!field.value}
-            onCheckedChange={field.onChange}
+          <RadioGroup
+            items={items}
+            value={field.value}
+            onValueChange={field.onChange}
+            rootClassname={styles.radioWrapper}
           />
         )}
       />

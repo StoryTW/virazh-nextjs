@@ -1,8 +1,10 @@
-import React from 'react'
-import styles from './FinalStep.module.scss'
+import React from 'react';
+import styles from './FinalStep.module.scss';
 
 export const FinalStep = () => {
   return (
-    <div>FinalStep</div>
-  )
-}
+    <div className={styles.root}>
+      <div>Итоговая стоимость</div>
+    </div>
+  );
+};
