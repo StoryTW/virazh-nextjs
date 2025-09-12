@@ -21,6 +21,13 @@ import { DesignStep6 } from './Design/DesignStep6/DesignStep6';
 import { DesignStep7 } from './Design/DesignStep7/DesignStep7';
 import { DesignStep8 } from './Design/DesignStep8/DesignStep8';
 import { DesignStep9 } from './Design/DesignStep9/DesignStep9';
+import { VerstkaStep1 } from './Verstka/VerstkaStep1/VerstkaStep1';
+import { VerstkaStep2 } from './Verstka/VerstkaStep2/VerstkaStep2';
+import { VerstkaStep3 } from './Verstka/VerstkaStep3/VerstkaStep3';
+import { VerstkaStep4 } from './Verstka/VerstkaStep4/VerstkaStep4';
+import { VerstkaStep5 } from './Verstka/VerstkaStep5/VerstkaStep5';
+import { VerstkaStep6 } from './Verstka/VerstkaStep6/VerstkaStep6';
+import { VerstkaStep7 } from './Verstka/VerstkaStep7/VerstkaStep7';
 
 export interface IForm {
   entry_step: 'full' | 'design' | 'verstka';
@@ -52,7 +59,7 @@ export interface IForm {
   step2_verstka?: 'yes' | 'no';
   step3_verstka?: ('sliders' | 'modals' | 'dropdowns')[];
   step4_verstka?: string;
-  step5_verstka?: ('pr' | 'vistavka' | 'otchet')[];
+  step5_verstka?: 'pr' | 'vistavka' | 'otchet' | 'custom';
   step6_verstka?: string;
   step7_verstka?: boolean;
 }
@@ -80,7 +87,15 @@ export const STEPS_DATA = {
     <DesignStep8 />,
     <DesignStep9 />,
   ],
-  verstka: [<FullStep1 />, <FullStep2 />],
+  verstka: [
+    <VerstkaStep1 />,
+    <VerstkaStep2 />,
+    <VerstkaStep3 />,
+    <VerstkaStep4 />,
+    <VerstkaStep5 />,
+    <VerstkaStep6 />,
+    <VerstkaStep7 />,
+  ],
 };
 
 export const CreateProductForm = () => {
