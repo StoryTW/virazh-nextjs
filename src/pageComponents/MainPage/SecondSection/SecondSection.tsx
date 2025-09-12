@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './SecondSection.module.scss';
+import LineItems from '@/components/LineItems/LineItems';
 
 const ITEMS = [
   {
@@ -24,21 +25,7 @@ const SecondSection = () => {
     <div className={styles.SecondSection}>
       <h1 className={styles.title}>Создаем а так же продвигаем бренды</h1>
       <h1 className={styles.title2}>с помощью интернет-маркетинга </h1>
-      <div className={styles.items_wrapper}>
-        <div className={styles.items}>
-          {ITEMS.map((item) => (
-            <div className={styles.item} key={item.id}>
-              <p className={styles.title}>
-                <span>{item.title.charAt(0)}</span>
-                {item.title.slice(1)}
-              </p>
-              <div className={styles.circle}></div>
-              <p className={styles.text}>{item.text}</p>
-            </div>
-          ))}
-        </div>
-        <div className={styles.cirlces}></div>
-      </div>
+      <LineItems items={ITEMS} />
     </div>
   );
 };

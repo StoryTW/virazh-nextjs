@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Geist_Mono, Onest } from 'next/font/google';
+import { Onest } from 'next/font/google';
 import { Providers } from '@/providers/Providers';
 import '@/assets/styles/index.scss';
 import { Header } from '@/layout/Header/Header';
@@ -30,11 +30,6 @@ const onest = Onest({
   subsets: ['cyrillic', 'latin'],
 });
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -42,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={`${onest.variable} ${geistMono.variable}`}>
+      <body className={`${onest.variable}`}>
         <Providers>
           <Header />
           {children}
