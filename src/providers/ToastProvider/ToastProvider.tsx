@@ -1,18 +1,16 @@
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
-import { FC } from 'react';
+import { Toaster } from 'sonner';
 
-const ToastProvider: FC = () => (
-  <ToastContainer
-    position='top-right'
-    hideProgressBar
-    newestOnTop
-    pauseOnFocusLoss
-    draggable
-    autoClose={1500}
-    closeButton
-    theme='colored'
-  />
-);
+const ToastProvider = () => {
+  return (
+    <Toaster
+      position='top-center'
+      toastOptions={{
+        duration: 3000,
+      }}
+      theme='dark'
+      richColors
+    />
+  );
+};
 
 export default ToastProvider;

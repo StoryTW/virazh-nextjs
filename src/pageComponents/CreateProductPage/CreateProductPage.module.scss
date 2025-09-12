@@ -1,0 +1,14 @@
+.root {
+  // position: relative;
+  background: url('/assets/img/bg_create_product.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: calc(100vh - 72px);
+}
+
+.wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 0px;
+}
