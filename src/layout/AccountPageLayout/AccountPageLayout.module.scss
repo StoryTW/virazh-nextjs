@@ -1,0 +1,34 @@
+.root {
+  background: url('/assets/img/fon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: calc(100vh - 72px);
+}
+
+.section {
+  max-width: 1470px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 56px 0px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 48px;
+  text-align: center;
+  color: var(--white);
+  line-height: 80%;
+}
+
+.content {
+  border-radius: 30px;
+  border: 2px solid var(--blue);
+  padding: 50px 80px;
+  margin-bottom: 48px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: minmax(100px, 418px) minmax(100px, 1fr);
+  gap: 20px;
+}
