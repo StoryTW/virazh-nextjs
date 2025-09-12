@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './DesignStep3.module.scss';
 import { Controller, useFormContext } from 'react-hook-form';
 import { Checkbox } from '@/components/ui/Checkbox/Checkbox';
 import { IForm } from '../../CreateProductForm';
+import { toast } from 'sonner';
+import { StepTitle } from '../../StepTitle/StepTitle';
 
 type OptionsType = {
   label: string;
-  value: 'sliders' | 'modals' | 'dropdowns';
+  value: 'corporate' | 'strict' | 'aggresion' | 'young' | 'avangard' | 'soft' | 'warm';
 };
 
 const OPTIONS: OptionsType[] = [
-  { label: 'Слайдеры', value: 'sliders' },
-  { label: 'Выпадающие меню', value: 'dropdowns' },
-  { label: 'Всплывающие окна', value: 'modals' },
+  { label: 'Корпоративный', value: 'corporate' },
+  { label: 'Строгий', value: 'strict' },
+  { label: 'Агрессивный', value: 'aggresion' },
+  { label: 'Молодежный', value: 'young' },
+  { label: 'Авангардный', value: 'avangard' },
+  { label: 'Мягкий', value: 'soft' },
+  { label: 'Теплый', value: 'warm' },
 ];
 
 export const DesignStep3 = () => {
@@ -21,36 +27,49 @@ export const DesignStep3 = () => {
     formState: { errors },
   } = useFormContext<IForm>();
 
+  useEffect(() => {
+    if (errors.step3_design) {
+      toast.error(errors.step3_design.message);
+    }
+  }, [errors.step3_design]);
+
   return (
-    <div>
+    <div className={styles.root}>
+      <StepTitle title={'Слова, характеризующие стилистику вашего сайта'} />
+
       {OPTIONS.map((checkbox) => {
         return (
-          // <Controller
-          //   key={checkbox.value}
-          //   name='step3_full'
-          //   control={control}
-          //   rules={{
-          //     validate: (value) => value.length > 0 || 'Выберите хотя бы один вариант',
-          //   }}
-          //   render={({ field }) => {
-          //     const isChecked = field.value.includes(checkbox.value);
+          <Controller
+            key={checkbox.value}
+            name='step3_design'
+            control={control}
+            defaultValue={[]}
+            rules={{
+              validate: (value) => (value && value.length > 0) || 'Выберите хотя бы один вариант',
+            }}
+            render={({ field }) => {
+              const isChecked = (field.value ?? []).includes(checkbox.value);
 
-          //     const onChange = (checked: boolean | 'indeterminate') => {
-          //       if (checked) {
-          //         field.onChange([...field.value, checkbox.value]);
-          //       } else {
-          //         field.onChange(field.value.filter((v: string) => v !== checkbox.value));
-          //       }
-          //     };
+              const onChange = (checked: boolean | 'indeterminate') => {
+                const currentValue = field.value ?? [];
 
-          //     return (
-          //       <Checkbox label={checkbox.label} checked={isChecked} onCheckedChange={onChange} />
-          //     );
-          //   }}
-          // />
-          <div key={checkbox.value}>
-            step3 full
-          </div>
+                if (checked) {
+                  field.onChange([...currentValue, checkbox.value]);
+                } else {
+                  field.onChange(currentValue.filter((v: string) => v !== checkbox.value));
+                }
+              };
+
+              return (
+                <Checkbox
+                  label={checkbox.label}
+                  checked={isChecked}
+                  onCheckedChange={onChange}
+                  withBg
+                />
+              );
+            }}
+          />
         );
       })}
     </div>

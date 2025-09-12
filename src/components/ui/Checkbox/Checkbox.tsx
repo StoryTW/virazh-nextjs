@@ -23,6 +23,7 @@ type PartialCheckboxProps = Pick<
 interface ICheckbox extends PartialCheckboxProps {
   label: string;
   error?: unknown;
+  withBg?: boolean;
 }
 
 export const Checkbox: FC<ICheckbox> = ({
@@ -38,9 +39,15 @@ export const Checkbox: FC<ICheckbox> = ({
   onCheckedChange,
   error,
   label,
+  withBg = false,
 }) => {
   return (
-    <label htmlFor={id} className={styles.wrapper}>
+    <label
+      htmlFor={id}
+      className={clsx(styles.wrapper, {
+        [styles.withBg]: withBg,
+      })}
+    >
       <CheckboxRadix.Root
         className={styles.root}
         id={id}

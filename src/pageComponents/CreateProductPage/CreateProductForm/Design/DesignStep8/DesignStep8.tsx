@@ -8,7 +8,7 @@ const validationRules = {
   required: 'Поле обязательно для заполнения',
 };
 
-export const DesignStep4 = () => {
+export const DesignStep8 = () => {
   const {
     control,
     formState: { errors },
@@ -17,12 +17,12 @@ export const DesignStep4 = () => {
   return (
     <div>
       <StepTitle
-        title='Перечислите 3-6 сайтов, дизайн которых Вам нравится'
+        title='Перечислите модули, которые будут использоваться на сайте'
         style={{ marginBottom: 16, maxWidth: '50%' }}
       />
 
       <Controller
-        name='step4_design'
+        name='step8_design'
         control={control}
         rules={validationRules}
         render={({ field }) => {
@@ -31,8 +31,9 @@ export const DesignStep4 = () => {
               value={field.value}
               onChange={field.onChange}
               rows={11}
-              placeholder='Поле для ввода текста'
-              error={errors.step4_design?.message}
+              placeholder={`Поле для ввода текста
+              \nНапример, Информационная страница, Новостная лента, Обратная связь, Фотогалерея, Файловый архив, Каталог продукции, Регистрация пользователей, Поиск и т.п.`}
+              error={errors.step8_design?.message}
             />
           );
         }}

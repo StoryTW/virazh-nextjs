@@ -3,6 +3,13 @@
   display: inline-flex;
   gap: 16px;
   align-items: center;
+
+  &.withBg {
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    cursor: pointer;
+  }
 }
 
 .root {
@@ -44,7 +51,7 @@
 .text {
   cursor: pointer;
   width: 100%;
-  // @include Regular_18;
+  @include onest_400_20;
   color: var(--white);
 
   &.error {

@@ -17,6 +17,10 @@ import { DesignStep2 } from './Design/DesignStep2/DesignStep2';
 import { DesignStep3 } from './Design/DesignStep3/DesignStep3';
 import { DesignStep4 } from './Design/DesignStep4/DesignStep4';
 import { DesignStep5 } from './Design/DesignStep5/DesignStep5';
+import { DesignStep6 } from './Design/DesignStep6/DesignStep6';
+import { DesignStep7 } from './Design/DesignStep7/DesignStep7';
+import { DesignStep8 } from './Design/DesignStep8/DesignStep8';
+import { DesignStep9 } from './Design/DesignStep9/DesignStep9';
 
 export interface IForm {
   entry_step: 'full' | 'design' | 'verstka';
@@ -33,13 +37,13 @@ export interface IForm {
   step9_full?: 'center' | 'wide' | 'designer' | 'adaptiv';
 
   //design
-  step1_design?: 'logo' | 'colors' | 'other';
-  step2_design?: 'graphic' | 'info' | 'other';
+  step1_design?: 'logo' | 'colors' | 'designer' | 'custom';
+  step2_design?: 'graphic' | 'info' | 'graphic_and_info' | 'custom';
   step3_design?: ('corporate' | 'strict' | 'aggresion' | 'young' | 'avangard' | 'soft' | 'warm')[];
   step4_design?: string;
-  step5_design?: 'cold' | 'warm' | 'other';
-  step6_design?: 'smooth' | 'sharped' | 'rectangular' | 'other';
-  step7_design?: 'resume' | 'corporate' | 'info' | 'e-commerce' | 'other';
+  step5_design?: 'cold' | 'warm' | 'common_colors' | 'custom';
+  step6_design?: 'smooth' | 'sharped' | 'rectangular' | 'custom';
+  step7_design?: 'resume' | 'corporate' | 'info' | 'e-commerce' | 'custom';
   step8_design?: string;
   step9_design?: 'yes' | 'no';
 
@@ -65,7 +69,17 @@ export const STEPS_DATA = {
     <FullStep8 />,
     <FullStep9 />,
   ],
-  design: [<DesignStep1 />, <DesignStep2 />, <DesignStep3 />, <DesignStep4 />, <DesignStep5 />],
+  design: [
+    <DesignStep1 />,
+    <DesignStep2 />,
+    <DesignStep3 />,
+    <DesignStep4 />,
+    <DesignStep5 />,
+    <DesignStep6 />,
+    <DesignStep7 />,
+    <DesignStep8 />,
+    <DesignStep9 />,
+  ],
   verstka: [<FullStep1 />, <FullStep2 />],
 };
 

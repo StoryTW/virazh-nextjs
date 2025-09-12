@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './DesignStep1.module.scss';
 import { Controller, useFormContext } from 'react-hook-form';
-import { Checkbox } from '@/components/ui/Checkbox/Checkbox';
 import { IForm } from '../../CreateProductForm';
+import { RadioGroup } from '@/components/ui/RadioGroup/RadioGroup';
+import { toast } from 'sonner';
 
-type OptionsType = {
-  label: string;
-  value: 'sliders' | 'modals' | 'dropdowns';
-};
-
-const OPTIONS: OptionsType[] = [
-  { label: 'Слайдеры', value: 'sliders' },
-  { label: 'Выпадающие меню', value: 'dropdowns' },
-  { label: 'Всплывающие окна', value: 'modals' },
+const items = [
+  {
+    name: 'Логотип/товарный знак',
+    value: 'logo',
+  },
+  {
+    name: 'Фирменные цвета и шрифты',
+    value: 'colors',
+  },
+    {
+    name: 'На усмотрение дизайнера',
+    value: 'designer',
+  },
+  {
+    name: 'Другое',
+    value: 'custom',
+  },
 ];
+
+const validationRules = {
+  required: 'Выберите хотя бы один вариант',
+};
 
 export const DesignStep1 = () => {
   const {
@@ -21,38 +34,28 @@ export const DesignStep1 = () => {
     formState: { errors },
   } = useFormContext<IForm>();
 
+  useEffect(() => {
+    if (errors.step1_design) {
+      toast.error(errors.step1_design.message);
+    }
+  }, [errors.step1_design]);
+
   return (
-    <div>
-      {OPTIONS.map((checkbox) => {
-        return (
-          // <Controller
-          //   key={checkbox.value}
-          //   name='step3_full'
-          //   control={control}
-          //   rules={{
-          //     validate: (value) => value.length > 0 || 'Выберите хотя бы один вариант',
-          //   }}
-          //   render={({ field }) => {
-          //     const isChecked = field.value.includes(checkbox.value);
-
-          //     const onChange = (checked: boolean | 'indeterminate') => {
-          //       if (checked) {
-          //         field.onChange([...field.value, checkbox.value]);
-          //       } else {
-          //         field.onChange(field.value.filter((v: string) => v !== checkbox.value));
-          //       }
-          //     };
-
-          //     return (
-          //       <Checkbox label={checkbox.label} checked={isChecked} onCheckedChange={onChange} />
-          //     );
-          //   }}
-          // />
-          <div key={checkbox.value}>
-            step3 full
-          </div>
-        );
-      })}
+    <div className={styles.root}>
+      <Controller
+        name='step1_design'
+        control={control}
+        rules={validationRules}
+        render={({ field }) => (
+          <RadioGroup
+            items={items}
+            value={field.value}
+            onValueChange={field.onChange}
+            rootClassname={styles.radioWrapper}
+            titleName='Фирменный стиль'
+          />
+        )}
+      />
     </div>
   );
 };
