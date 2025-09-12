@@ -3,3 +3,22 @@
   padding: 54px 80px 20px 80px;
   border-radius: 30px;
 }
+
+.guestText {
+  @include onest_800_24;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.authLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  @include onest_800_20;
+  color: var(--gray);
+  @include transition;
+
+  &:hover {
+    color: var(--white);
+  }
+}

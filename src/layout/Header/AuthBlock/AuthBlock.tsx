@@ -12,7 +12,7 @@ export const AuthBlock = () => {
         <IconProfile />
       </Link>
 
-      <Link href={ROUTER.CART} className={styles.link}>
+      <Link href={ROUTER.CART_PUBLIC} className={styles.link}>
         <IconCart />
       </Link>
     </div>

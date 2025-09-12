@@ -1,7 +1,8 @@
 export const ROUTER = {
   MAIN: '/',
-  // AUTH: '/auth',
-  CART: '/profile/cart',
+  AUTH: '/auth',
+  CART_PROFILE: '/profile/cart',
+  CART_PUBLIC: '/cart',
   REVIEWS: '/reviews',
   FAQ: '/faq',
   CONTACS: '#contacts',

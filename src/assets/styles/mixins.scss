@@ -146,6 +146,18 @@
 
 @mixin onest_600_20 {
   font-family: var(--font-onest);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+@mixin onest_800_20 {
+  font-family: var(--font-onest);
   font-weight: 400;
   font-size: 20px;
+}
+
+@mixin onest_800_24 {
+  font-family: var(--font-onest);
+  font-weight: 400;
+  font-size: 24px;
 }
