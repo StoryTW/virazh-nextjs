@@ -1,0 +1,11 @@
+// .root {
+//   // display: grid;
+//   // grid-template-columns: repeat(2, 1fr);
+//   // gap: 24px;
+// }
+
+.radioWrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}

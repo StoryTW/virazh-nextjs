@@ -1,0 +1,19 @@
+// .root {
+// }
+
+.wrapper {
+  padding: 44px 70px 0px;
+}
+
+.stepsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.step {
+  @include onest_600_20;
+  text-transform: uppercase;
+  color: var(--white);
+}

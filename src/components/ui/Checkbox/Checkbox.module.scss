@@ -1,0 +1,60 @@
+.wrapper {
+  cursor: pointer;
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+
+  &.withBg {
+    padding: 24px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 16px;
+    cursor: pointer;
+  }
+}
+
+.root {
+  all: unset;
+  cursor: pointer;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+  background-color: var(--black);
+  border-radius: 8px;
+
+  &:focus {
+    background-color: var(--black);
+  }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.label {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+}
+
+.text {
+  cursor: pointer;
+  width: 100%;
+  @include onest_400_20;
+  color: var(--white);
+
+  &.error {
+    color: var(--red);
+  }
+}

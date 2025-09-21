@@ -25,9 +25,9 @@ export const viewport: Viewport = {
   userScalable: true,
 };
 
-const onestSans = Onest({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
+const onest = Onest({
+  variable: '--font-onest',
+  subsets: ['cyrillic', 'latin'],
 });
 
 export default function RootLayout({
@@ -37,11 +37,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ru'>
-      <body className={onestSans.variable}>
+      <body className={`${onest.variable}`}>
         <Providers>
           <Header />
           {children}
-          <Footer />
+          {/* <Footer /> */}
         </Providers>
       </body>
     </html>

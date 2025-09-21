@@ -1,0 +1,25 @@
+.root {
+  background: radial-gradient(
+    100.15% 163.17% at 81.69% 110.98%,
+    rgba(255, 253, 253, 0.1) 0%,
+    rgba(38, 39, 39, 0.9) 100%
+  );
+  border-radius: 30px;
+}
+
+// .wrapper {
+//   // padding: 0px 70px;
+// }
+
+.content {
+  height: 424px;
+  padding: 24px 140px;
+}
+
+.entryTitle {
+  height: 91px;
+  text-align: center;
+  color: var(--white);
+  @include onest_400_20;
+  font-size: 72px;
+}
