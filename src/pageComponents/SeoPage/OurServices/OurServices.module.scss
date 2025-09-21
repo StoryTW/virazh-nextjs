@@ -5,9 +5,57 @@
   position: relative;
   padding-top: 72px;
 
+  .last_h1 {
+    font-size: 40px;
+    font-weight: 300;
+    margin: 100px 0;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .products_section_wrapper {
+    margin-top: 350px;
+  }
+
   .products_section {
     margin: 70px 0;
     position: relative;
+
+    .footerContent {
+      max-width: 1472px;
+      width: 100%;
+      position: absolute;
+      left: 50px;
+      transform: translateY(-50%);
+      bottom: -460px;
+      z-index: -1;
+      border: 3px solid var(--blue);
+      padding: 121px 80px 45px 80px;
+      border-radius: 30px;
+
+      h3 {
+        font-weight: 700;
+        font-size: 16;
+        margin-bottom: 50px;
+      }
+
+      p,
+      li {
+        font-size: 16;
+      }
+    }
+
+    .h1_products {
+      font-size: 40px;
+      font-weight: 300;
+      padding-bottom: 50px;
+
+      span {
+        font-weight: 600;
+      }
+    }
 
     .imgWrapper {
       position: absolute;

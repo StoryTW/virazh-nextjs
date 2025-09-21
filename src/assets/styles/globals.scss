@@ -56,6 +56,7 @@ button:focus {
 }
 
 body {
+  overflow-x: hidden;
   font-family: Onest;
   margin: 0;
   background: var(--bg_main);

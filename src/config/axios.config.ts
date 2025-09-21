@@ -1,28 +1,30 @@
 // import { getToken } from '@/utils/token';
 import axios, { AxiosError, AxiosResponse } from 'axios';
 
-export const BASE_URL = 'https://api.onmir.ru/api';
+interface IBasicResponse<T> {
+  data: T;
+}
 
 //Использовать для серверных запросов
 export const axiosConfig = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_BASE,
   timeout: 25000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
-const responseBody = <T>(response: AxiosResponse<T>) => response.data;
+const responseBody = <T>(response: AxiosResponse<IBasicResponse<T>>) => response.data.data;
 
 //Использовать для клиентских запросов с помощью tanstack-query
 export const api = {
   get: <T, TParams = undefined | any>(url: string, queryParams?: TParams) =>
-    axiosConfig.get<T>(url, { params: queryParams }).then(responseBody),
+    axiosConfig.get<IBasicResponse<T>>(url, { params: queryParams }).then(responseBody),
   post: <T>(url: string, body?: Record<string, any>) =>
-    axiosConfig.post<T>(url, body).then(responseBody),
+    axiosConfig.post<IBasicResponse<T>>(url, body).then(responseBody),
   put: <T>(url: string, body?: Record<string, any>) =>
-    axiosConfig.put<T>(url, body).then(responseBody),
-  delete: <T>(url: string) => axiosConfig.delete<T>(url).then(responseBody),
+    axiosConfig.put<IBasicResponse<T>>(url, body).then(responseBody),
+  delete: <T>(url: string) => axiosConfig.delete<IBasicResponse<T>>(url).then(responseBody),
 };
 
 axiosConfig.interceptors.request.use(

@@ -1,0 +1,123 @@
+.productsSection {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+
+  .item {
+    background-image: url('/assets/img/bg-service.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    width: 446px;
+    padding: 18px 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+
+    &:hover {
+      .border {
+        opacity: 1;
+      }
+    }
+
+    .img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .title {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 24px;
+      margin-top: 15px;
+    }
+
+    .category {
+      margin-top: 5px;
+      font-size: 16px;
+      background: #7b7b7b;
+      border-radius: 20px;
+      padding: 4px 8px;
+      color: var(--black);
+      width: fit-content;
+    }
+
+    .footer {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        svg path {
+          fill: var(--black);
+        }
+
+        p {
+          font-size: 16px;
+          color: var(--black);
+
+          span {
+            font-weight: 800;
+            color: var(--white);
+          }
+        }
+      }
+
+      .price {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--black);
+
+        span {
+          color: var(--white);
+          font-weight: 800;
+        }
+      }
+    }
+
+    .button {
+      margin-top: 20px;
+      margin: 0 auto;
+      max-width: 277px;
+      width: 100%;
+      text-align: center;
+      padding: 7px 5px;
+      background: linear-gradient(180deg, #2e7eff 0%, #1c4c99 100%);
+      font-size: 24px;
+      font-weight: 700;
+      border-radius: 20px;
+      color: var(--white);
+      cursor: pointer;
+
+      &:hover {
+        filter: contrast(1.5);
+      }
+    }
+
+    .border {
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 30px;
+      width: 120%;
+      height: 90%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 3px solid var(--blue);
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+}

@@ -16,7 +16,9 @@ const StartSectionPages: FC<IStartSectionPagesProps> = ({ title, subtitle, items
         <BackgroundCircles />
         <h1 className={styles.h1}>{title}</h1>
         <h1 className={styles.h1}>{subtitle}</h1>
-        <LineItems items={items} />
+        <div className={styles.line_items}>
+          <LineItems items={items} />
+        </div>
         <div className={styles.footer}>
           <ClientCountBlock />
         </div>
